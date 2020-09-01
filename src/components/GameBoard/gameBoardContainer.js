@@ -1,5 +1,6 @@
 // Function component, should reder 25 gameTiles, one team with 9, on team with 8
 import React, { useState } from "react";
+import GameTile from "./GameTile";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -68,35 +69,35 @@ export default function GameBoardContainer() {
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(0, 5).map((value) => (
             <Grid key={value} xs item>
-              <Paper className={classes.paper}>item {value}</Paper>
+              <GameTile />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(5, 10).map((value) => (
             <Grid key={value} xs item>
-              <Paper className={classes.paper}>item {value}</Paper>
+              <GameTile />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(10, 15).map((value) => (
             <Grid key={value} xs item>
-              <Paper className={classes.paper}>item {value}</Paper>
+              <GameTile />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(15, 20).map((value) => (
             <Grid key={value} xs item>
-              <Paper className={classes.paper}>item {value}</Paper>
+              <GameTile />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(20, 25).map((value) => (
             <Grid key={value} xs item>
-              <Paper className={classes.paper}>item {value}</Paper>
+              <GameTile />
             </Grid>
           ))}
         </Grid>
