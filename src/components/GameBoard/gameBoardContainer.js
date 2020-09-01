@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import Radio from "@material-ui/core/Radio";
+import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,13 +15,23 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(1),
+    height: 100,
     textAlign: "center",
     color: theme.palette.text.secondary,
+  },
+  control: {
+    padding: theme.spacing(2),
   },
 }));
 
 export default function GameBoardContainer() {
   const classes = useStyles();
+
+  const [spacing, setSpacing] = React.useState(2);
+
+  const handleChange = (event) => {
+    setSpacing(Number(event.target.value));
+  };
 
   // generate an array with 25 words
   const [gameBoard, setGameBoard] = useState([
@@ -48,47 +62,17 @@ export default function GameBoardContainer() {
     25,
   ]);
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid item xs={2.4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={2.4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={2.4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={2.4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={2.4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
   return (
-    <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow />
+    <Grid container className={classes.root} spacing={2}>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={spacing}>
+          {gameBoard.map((value) => (
+            <Grid key={value} xs={3} item>
+              <Paper className={classes.paper}>item {value}</Paper>
+            </Grid>
+          ))}
         </Grid>
       </Grid>
-    </div>
+    </Grid>
   );
 }
