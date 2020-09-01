@@ -66,8 +66,36 @@ export default function GameBoardContainer() {
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={spacing}>
-          {gameBoard.map((value) => (
-            <Grid key={value} xs={3} item>
+          {gameBoard.slice(0, 5).map((value) => (
+            <Grid key={value} xs item>
+              <Paper className={classes.paper}>item {value}</Paper>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container justify="center" spacing={spacing}>
+          {gameBoard.slice(5, 10).map((value) => (
+            <Grid key={value} xs item>
+              <Paper className={classes.paper}>item {value}</Paper>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container justify="center" spacing={spacing}>
+          {gameBoard.slice(10, 15).map((value) => (
+            <Grid key={value} xs item>
+              <Paper className={classes.paper}>item {value}</Paper>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container justify="center" spacing={spacing}>
+          {gameBoard.slice(15, 20).map((value) => (
+            <Grid key={value} xs item>
+              <Paper className={classes.paper}>item {value}</Paper>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container justify="center" spacing={spacing}>
+          {gameBoard.slice(20, 25).map((value) => (
+            <Grid key={value} xs item>
               <Paper className={classes.paper}>item {value}</Paper>
             </Grid>
           ))}
