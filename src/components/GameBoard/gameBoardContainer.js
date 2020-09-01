@@ -33,7 +33,7 @@ export default function GameBoardContainer() {
     setSpacing(Number(event.target.value));
   };
 
-  // generate an array with 25 words
+  // generate an array with 25 tiles
   const [gameBoard, setGameBoard] = useState([
     1,
     2,
