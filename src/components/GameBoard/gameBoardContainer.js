@@ -19,22 +19,7 @@ const useStyles = makeStyles((theme) => ({
 export default function GameBoardContainer() {
   const classes = useStyles();
 
-  function FormRow() {
-    return (
-      <React.Fragment>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-        <Grid item xs={4}>
-          <Paper className={classes.paper}>item</Paper>
-        </Grid>
-      </React.Fragment>
-    );
-  }
-
+  // generate an array with 25 words
   const [gameBoard, setGameBoard] = useState([
     1,
     2,
@@ -63,9 +48,37 @@ export default function GameBoardContainer() {
     25,
   ]);
 
+  function FormRow() {
+    return (
+      <React.Fragment>
+        <Grid item xs={2.4}>
+          <Paper className={classes.paper}>item</Paper>
+        </Grid>
+        <Grid item xs={2.4}>
+          <Paper className={classes.paper}>item</Paper>
+        </Grid>
+        <Grid item xs={2.4}>
+          <Paper className={classes.paper}>item</Paper>
+        </Grid>
+        <Grid item xs={2.4}>
+          <Paper className={classes.paper}>item</Paper>
+        </Grid>
+        <Grid item xs={2.4}>
+          <Paper className={classes.paper}>item</Paper>
+        </Grid>
+      </React.Fragment>
+    );
+  }
+
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
+        <Grid container item xs={12} spacing={3}>
+          <FormRow />
+        </Grid>
+        <Grid container item xs={12} spacing={3}>
+          <FormRow />
+        </Grid>
         <Grid container item xs={12} spacing={3}>
           <FormRow />
         </Grid>
