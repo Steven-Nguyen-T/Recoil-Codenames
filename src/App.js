@@ -5,6 +5,7 @@ import TeamSideContainer from "./components/TeamSide/TeamSideContainer";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,9 @@ function App() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <Typography variant="h2" align="center">
+        Codenames
+      </Typography>
       <Grid container spacing={3}>
         <Grid item xs={2}>
           <Paper className={classes.paper}>
