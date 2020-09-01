@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function GameTile() {
+export default function GameTile({ word }) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -40,7 +40,7 @@ export default function GameTile() {
           Word of the Day
         </Typography> */}
         <Typography variant="h5" component="h2">
-          Insert Word Here
+          {word}
         </Typography>
       </CardContent>
       <CardActions>

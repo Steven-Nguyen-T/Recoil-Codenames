@@ -7,6 +7,11 @@ export const gameBoardState = atom({
   },
 });
 
+// State for each atom: dynamically create 25 on render
+// word
+// team color
+// isSelected
+
 // Team Side State
 
 // General Game Logic State

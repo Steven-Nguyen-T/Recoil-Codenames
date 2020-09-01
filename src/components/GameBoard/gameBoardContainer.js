@@ -30,37 +30,33 @@ export default function GameBoardContainer() {
 
   const [spacing, setSpacing] = React.useState(2);
 
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
-
   // generate an array with 25 tiles
   const [gameBoard, setGameBoard] = useState([
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23,
-    24,
-    25,
+    "flock",
+    "known",
+    "lethal",
+    "song",
+    "ready",
+    "argue",
+    "misty",
+    "engine",
+    "flowers",
+    "expensive",
+    "vase",
+    "abounding",
+    "donkey",
+    "simplistic",
+    "unite",
+    "time",
+    "dog",
+    "glue",
+    "prevent",
+    "illustrious",
+    "miniature",
+    "multiply",
+    "dinosaurs",
+    "fancy",
+    "stupid",
   ]);
 
   return (
@@ -69,35 +65,35 @@ export default function GameBoardContainer() {
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(0, 5).map((value) => (
             <Grid key={value} xs item>
-              <GameTile />
+              <GameTile word={value} />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(5, 10).map((value) => (
             <Grid key={value} xs item>
-              <GameTile />
+              <GameTile word={value} />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(10, 15).map((value) => (
             <Grid key={value} xs item>
-              <GameTile />
+              <GameTile word={value} />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(15, 20).map((value) => (
             <Grid key={value} xs item>
-              <GameTile />
+              <GameTile word={value} />
             </Grid>
           ))}
         </Grid>
         <Grid container justify="center" spacing={spacing}>
           {gameBoard.slice(20, 25).map((value) => (
             <Grid key={value} xs item>
-              <GameTile />
+              <GameTile word={value} />
             </Grid>
           ))}
         </Grid>
