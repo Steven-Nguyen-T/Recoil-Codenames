@@ -33,7 +33,13 @@ function GameBoardContainer() {
   ]);
 
   // We need to just return 25 individual game tiles -- one simple loop
-  return <div>{gameBoard.map((value) => value)}</div>;
+  return (
+    <div>
+      {gameBoard.map((value) => (
+        <GameTile />
+      ))}
+    </div>
+  );
 }
 
 export default GameBoardContainer;
