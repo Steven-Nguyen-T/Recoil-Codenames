@@ -38,10 +38,13 @@ export default function GameTile({ word }) {
           </Typography>
         </CardContent>
 
-        {/* <CardActions>
-        <Button size="small">Vote</Button>
-        <Button size="small">Select</Button>
-        </CardActions> */}
+        {/* these nice looking buttons break it */}
+        {/* <Button size="small">Vote</Button> */}
+
+        <CardActions>
+          <button>Vote</button>
+          <button>Pick</button>
+        </CardActions>
       </Card>
     </div>
   );

@@ -9,7 +9,7 @@ import * as nodes from "./recoil/store";
 
 export const textState = atom({
   key: "textState", // unique ID (with respect to other atoms/selectors)
-  default: "d", // default value (aka initial value)
+  default: "ddfdsd", // default value (aka initial value)
 });
 export const charCountState = selector({
   key: "charCountState", // unique ID (with respect to other atoms/selectors)
