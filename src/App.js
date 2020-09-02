@@ -1,6 +1,7 @@
 import React from "react";
 import GameBoardContainer from "./components/GameBoard/GameBoardContainer";
 import TeamSideContainer from "./components/TeamSide/TeamSideContainer";
+import GameLogicContainer from "./components/GameLogic/GameLogicContainer";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -42,6 +43,9 @@ function App() {
           </Paper>
         </Grid>
       </Grid>
+      <Typography variant="h4" align="right">
+        <GameLogicContainer />
+      </Typography>
     </div>
   );
 }
