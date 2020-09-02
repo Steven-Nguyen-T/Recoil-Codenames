@@ -1,3 +1,3 @@
-import { redTeamState, gameBoardState } from "./atoms";
+import { redTeamState, blueTeamState, gameBoardState } from "./atoms";
 
-export { redTeamState, gameBoardState };
+export { redTeamState, blueTeamState, gameBoardState };

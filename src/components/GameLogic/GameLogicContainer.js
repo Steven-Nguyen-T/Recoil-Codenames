@@ -11,8 +11,16 @@ const GameLogicContainer = () => {
   const [gameBoard, setGameBoard] = useRecoilState(gameBoardState);
 
   // create function to create a new game board
+  const newGame = () => {
+    const arr = [];
+    for (let i = 0; i < 25; i++) {
+      arr.push(Math.floor(Math.random() * Math.floor(100)));
+    }
+    console.log(arr);
+    setGameBoard(arr);
+  };
 
-  return <button onClick={() => setGameBoard(["new"])}>next game</button>;
+  return <button onClick={() => newGame()}>next game</button>;
 };
 
 export default GameLogicContainer;
