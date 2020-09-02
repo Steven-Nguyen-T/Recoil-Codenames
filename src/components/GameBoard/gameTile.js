@@ -29,7 +29,6 @@ const useStyles = makeStyles({
 
 // Every time a game tile is generated we need to create an atom
 export default function GameTile({ word }) {
-  gameTileState(1);
   const classes = useStyles();
 
   const bull = <span className={classes.bullet}>•</span>;
