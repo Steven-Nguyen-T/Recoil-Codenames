@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 
 // State for each atom: dynamically create 25 on render
-export const gameTileWithId = memoize((id, color, text) =>
+export const gameTileState = memoize((id, color, text) =>
   atom({
     key: `gameTile${id}`,
     default: {

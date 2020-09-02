@@ -7,6 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
+import * as atoms from "../../recoil/atoms";
+
 const useStyles = makeStyles({
   root: {
     flexgrow: 1,
@@ -25,8 +27,11 @@ const useStyles = makeStyles({
   },
 });
 
+// Every time a game tile is generated we need to create an atom
 export default function GameTile({ word }) {
+  gameTileState(1);
   const classes = useStyles();
+
   const bull = <span className={classes.bullet}>•</span>;
 
   return (

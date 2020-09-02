@@ -30,6 +30,8 @@ export default function GameBoardContainer() {
 
   const [spacing, setSpacing] = React.useState(2);
 
+  // create a function that will gerate push 25 tiles to an array?
+
   // generate an array with 25 tiles
   const [gameBoard, setGameBoard] = useState([
     "flock",
@@ -59,6 +61,7 @@ export default function GameBoardContainer() {
     "stupid",
   ]);
 
+  // We need to just return 25 individual game tiles -- one simple loop
   return (
     <Grid container className={classes.root} spacing={2}>
       <Grid item xs={12}>
