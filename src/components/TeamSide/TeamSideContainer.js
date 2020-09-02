@@ -8,7 +8,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 
-const { redTeam } = atoms;
+const { redTeamState } = atoms;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,13 +21,11 @@ const TeamSideContainer = () => {
   const classes = useStyles();
 
   // using recoil state
-  const [rTeam, setRTeam] = useRecoilState(redTeam);
-
-  console.log(rTeam);
+  const [redTeam, setRedTeam] = useRecoilState(redTeamState);
 
   return (
     <div>
-      Score: {rTeam.score}
+      Score: {redTeam.score}
       <Divider />
       Operatives
       <Divider />

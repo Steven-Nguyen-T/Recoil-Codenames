@@ -1,4 +1,3 @@
-import { textState, redTeam } from "./atoms";
-// import { charCountState } from "../index";
+import { redTeamState, gameBoardState } from "./atoms";
 
-export { textState, redTeam };
+export { redTeamState, gameBoardState };
