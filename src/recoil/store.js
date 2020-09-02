@@ -1,4 +1,4 @@
-import { textState } from "../index";
-import { charCountState } from "../index";
+import { textState, redTeam } from "./atoms";
+// import { charCountState } from "../index";
 
-export { textState, charCountState };
+export { textState, redTeam };
