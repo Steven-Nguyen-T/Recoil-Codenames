@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import GameTile from "./GameTile";
 import * as atoms from "../../recoil/store";
 import { useRecoilState } from "recoil";
+import axios from 'axios'
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -36,35 +37,19 @@ function GameBoardContainer() {
   // generate an array with 25 tiles
   const [gameBoard, setGameBoard] = useRecoilState(gameBoardState);
 
-  useEffect(() => {
-    setGameBoard([
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10",
-      "11",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-      "17",
-      "18",
-      "19",
-      "20",
-      "21",
-      "22",
-      "23",
-      "24",
-      "25",
-    ]);
-  }, []);
+  useEffect(async () => {
+    const arrWords = [];
+    const wordBank = await axios.get('./wordList.json')
+    const words = wordBank.data['English (Original)']
+    for (let i = 0; i < 25; i++) {
+      let copy = words.slice(0)
+      let randomElement = Math.floor(Math.random() * copy.length)
+      arrWords.push(copy[randomElement])
+      delete copy[randomElement]
+    }
+    setGameBoard(arrWords)
+  }, [setGameBoard]);
+
   // We need to just return 25 individual game tiles -- one simple loop
   return (
     <Grid container className={classes.root} spacing={2}>
